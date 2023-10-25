@@ -10,4 +10,14 @@
             </argument>
         </arguments>
     </type>
+    <type name="Hyva\CompatModuleFallback\Model\CompatModuleRegistry">
+        <arguments>
+            <argument name="compatModules" xsi:type="array">
+                <item name="hyva-magento2-snowdog-santander" xsi:type="array">
+                    <item name="original_module" xsi:type="string">Aurora_Santander</item>
+                    <item name="compat_module" xsi:type="string">Snowdog_HyvaCheckoutSantander</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>

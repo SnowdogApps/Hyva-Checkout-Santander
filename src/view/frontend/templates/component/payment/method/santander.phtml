@@ -1,0 +1,44 @@
+<?php
+declare(strict_types=1);
+
+/** @var Template $block */
+/** @var Santander $magewire */
+
+/** @var Escaper $escaper */
+
+use Snowdog\Hyva\Checkout\Santander\Payment\Method\Santander;
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+
+$issuers = $magewire->getIssuers();
+?>
+<div
+        class="col-span-6"
+        wire:payment-method="eraty_santander"
+>
+    <input
+            class="cursor-pointer"
+            type="checkbox"
+            checked
+            name="accept_tos"
+            id="accept_tos"
+            wire:model="acceptTos"
+    />
+    <label for="accept_tos">
+                <span>
+                    <?= $escaper->escapeHtml(
+                        __(
+                            'Zapoznałem się z procedurą udzielenia kredytu konsumenckiego na zakup towarów i usług'
+                        )
+                    ) ?>
+                </span>
+        <a
+                class="link link-secondary"
+                target="_blank"
+                href="https://www.santanderconsumer.pl/raty-jak-kupic"
+        >
+            <?= $escaper->escapeHtml(__('eRaty Santander Consumer Bank')) ?>
+        </a>
+
+    </label>
+</div>
