@@ -13,32 +13,31 @@ use Magento\Framework\View\Element\Template;
 $issuers = $magewire->getIssuers();
 ?>
 <div
-        class="col-span-6"
-        wire:payment-method="eraty_santander"
+    class="grid grid-cols-[auto,auto]"
+    wire:payment-method="eraty_santander"
 >
     <input
-            class="cursor-pointer"
-            type="checkbox"
-            checked
-            name="accept_tos"
-            id="accept_tos"
-            wire:model="acceptTos"
+        class="cursor-pointer text-pink-700 mt-1"
+        type="checkbox"
+        checked
+        name="accept_tos"
+        id="accept_tos"
+        wire:model="acceptTos"
     />
     <label for="accept_tos">
-                <span>
-                    <?= $escaper->escapeHtml(
-                        __(
-                            'Zapoznałem się z procedurą udzielenia kredytu konsumenckiego na zakup towarów i usług'
-                        )
-                    ) ?>
-                </span>
+        <span>
+            <?= $escaper->escapeHtml(
+                __(
+                    'I have familiarised myself with the procedure for granting consumer credit for the purchase of goods and services'
+                )
+            ) ?>
+        </span>
         <a
-                class="link link-secondary"
-                target="_blank"
-                href="https://www.santanderconsumer.pl/raty-jak-kupic"
+            class="link link-secondary"
+            target="_blank"
+            href="https://www.santanderconsumer.pl/raty-jak-kupic"
         >
             <?= $escaper->escapeHtml(__('eRaty Santander Consumer Bank')) ?>
         </a>
-
     </label>
 </div>
