@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <body>
+        <referenceBlock name="checkout.payment.methods">
+            <block name="checkout.payment.method.eraty_santander"
+                   as="eraty_santander"
+                   template="Snowdog_HyvaCheckoutSantander::component/payment/method/santander.phtml">
+                <arguments>
+                    <argument name="magewire" xsi:type="object">
+                        Snowdog\Hyva\Checkout\Santander\Payment\Method\Santander
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
