@@ -4,6 +4,7 @@
 	<module name="Snowdog_HyvaCheckoutSantander">
 		<sequence>
 			<module name="Aurora_Santander" />
+			<module name="Hyva_CompatModuleFallback"/>
 		</sequence>
 	</module>
 </config>
