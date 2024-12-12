@@ -24,9 +24,10 @@ class Santander extends Component implements EvaluationInterface
         }
 
         if (!$this->acceptTos) {
-            return $resultFactory->createErrorMessageEvent()
+            $errorMessageEvent = $resultFactory->createErrorMessageEvent()
                 ->withMessage(__('TOS not accepted'))
                 ->withCustomEvent('payment:method:error');
+            return $resultFactory->createValidation('validateSantanderAcceptTos')->withFailureResult($errorMessageEvent);
 
         }
 
