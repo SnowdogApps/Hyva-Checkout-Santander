@@ -1,0 +1,8 @@
+<script>
+    window.addEventListener('checkout:init:evaluation', event => {
+        hyvaCheckout.evaluation.registerValidator('validateSantanderAcceptTos', (element, component) => {
+            let currentAcceptTos = component.get('acceptTos');
+            return false !== currentAcceptTos;
+        })
+    })
+</script>
