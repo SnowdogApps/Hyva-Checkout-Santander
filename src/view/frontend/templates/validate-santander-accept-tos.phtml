@@ -1,8 +1,8 @@
 <script>
-    hyvaCheckout.evaluation.registerValidator('validateSantanderAcceptTos', async (element, component) => {
-        return new Promise(resolve => {
+    window.addEventListener('checkout:init:evaluation', event => {
+        hyvaCheckout.evaluation.registerValidator('validateSantanderAcceptTos', (element, component) => {
             let currentAcceptTos = component.get('acceptTos');
-            resolve(false !== currentAcceptTos);
+            return false !== currentAcceptTos;
         })
     })
 </script>
