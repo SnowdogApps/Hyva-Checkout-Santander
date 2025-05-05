@@ -1,8 +1,22 @@
+<?php
+use Hyva\Theme\ViewModel\HyvaCsp;
+
+/** @var HyvaCsp $hyvaCsp */
+?>
+
 <script>
-    window.addEventListener('checkout:init:evaluation', event => {
-        hyvaCheckout.evaluation.registerValidator('validateSantanderAcceptTos', (element, component) => {
-            let currentAcceptTos = component.get('acceptTos');
-            return false !== currentAcceptTos;
+    <?php // For some reason 'checkout:init:evaluation' is too late, so we use 'checkout:init:main' instead ?>
+    window.addEventListener('checkout:init:main', event => {
+        hyvaCheckout.evaluation.registerValidator('validateSantanderAcceptTos', async (element, component) => {
+            return new Promise((resolve, reject) => {
+                let currentAcceptTos = component.get('acceptTos');
+                if (false !== currentAcceptTos) {
+                    resolve(true);
+                } else {
+                    reject(false);
+                }
+            });
         })
     })
 </script>
+<?php $hyvaCsp->registerInlineScript() ?>
