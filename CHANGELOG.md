@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [1.3.0] - 2024-12-16
+- Add frontend validation
+
 ## [1.1.0] - 2023-10-27
 - DEV-103096 - TOS Checkbox
 
