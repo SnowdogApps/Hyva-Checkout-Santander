@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [1.4.0] - 2025-07-07
+- Hyva checkout 1.3.0 compatibility
+
 ## [1.3.0] - 2024-12-16
 - Add frontend validation
 
